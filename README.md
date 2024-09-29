@@ -1,2 +1,2 @@
-# XiaoMiShopping
-Web app like xiaomi shopping
+# XiaoMiShop
+Web app like xiaomi shop
