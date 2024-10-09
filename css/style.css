@@ -525,7 +525,7 @@ img {
       line-height: 58px;
     }
 
-    .more {
+    .title-more {
       height: 58px;
       line-height: 58px;
       position: absolute;
@@ -557,6 +557,30 @@ img {
         }
       }
     }
+
+    .title-list {
+      height: 58px;
+      line-height: 58px;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      li {
+        display: inline-block;
+        line-height: 24px;
+        padding: 0;
+        margin-left: 30px;
+        font-size: 16px;
+        color: #424242;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        transition: border 0.3s;
+
+        &:hover {
+          color: #ff6700;
+          border-bottom: 2px solid #ff6700;
+        }
+      }
+    }
   }
 
   .content-img-box {
@@ -570,75 +594,204 @@ img {
     }
   }
 
-  .phone {
-    .phone-box {
-      width: 100%;
+  .items-box {
+    width: 100%;
+    height: 614px;
+
+    .items-img-box {
+      width: 234px;
       height: 614px;
+      float: left;
+      transition: all 0.3s linear;
 
-      .phone-left-box {
-        width: 234px;
-        height: 614px;
-        float: left;
+      img {
+        width: 100%;
+        height: 100%;
 
-        img {
-          width: 100%;
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
       }
 
-      .phone-right-box {
-        width: 992px;
-        height: 614px;
+      .items-img-box-half {
+        width: 234px;
+        height: 300px;
+        margin-bottom: 14px;
+        background-color: #fff;
         float: left;
+        transition: all 0.3s linear;
 
-        .item {
-          width: 234px;
-          height: 300px;
-          margin: 0 0 14px 14px;
-          background-color: #fff;
-          padding: 20px 0;
-          box-sizing: border-box;
-          float: left;
-          transition: all 0.2s linear;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
 
-          img {
-            width: 160px;
-            margin-bottom: 19px;
-          }
+    .item-box {
+      width: 992px;
+      height: 614px;
+      float: left;
 
-          .name {
-            width: 214px;
-            height: 21px;
-            font-size: 14px;
-            font-weight: 400;
-            text-align: center;
-            color: #333;
-            line-height: 21px;
-            margin: 0 auto 2px;
-          }
+      .item {
+        width: 234px;
+        height: 300px;
+        margin: 0 0 14px 14px;
+        background-color: #fff;
+        padding: 20px 0;
+        box-sizing: border-box;
+        float: left;
+        transition: all 0.3s linear;
 
-          .descr {
-            width: 214px;
-            height: 18px;
+        img {
+          width: 160px;
+          margin-bottom: 19px;
+        }
+
+        .name {
+          width: 214px;
+          height: 21px;
+          font-size: 14px;
+          font-weight: 400;
+          text-align: center;
+          color: #333;
+          line-height: 21px;
+          margin: 0 auto 2px;
+        }
+
+        .descr {
+          width: 214px;
+          height: 18px;
+          color: #b0b0b0;
+          font-size: 12px;
+          line-height: 18px;
+          margin: 0 auto 10px;
+        }
+
+        .price {
+          color: #ff6700;
+          font-size: 14px;
+
+          del {
+            margin-left: 7px;
             color: #b0b0b0;
-            font-size: 12px;
-            line-height: 18px;
-            margin: 0 auto 10px;
           }
+        }
 
-          .price {
-            color: #ff6700;
-            font-size: 14px;
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+      }
 
-            del {
-              margin-left: 7px;
-              color: #b0b0b0;
+      .item-half {
+        width: 234px;
+        height: 300px;
+        float: left;
+        margin-left: 14px;
+        transition: all 0.3s linear;
+
+        & > div {
+          width: 234px;
+          height: 143px;
+          padding-top: 50px;
+          box-sizing: border-box;
+          background-color: #fff;
+        }
+
+        & > .item-half-item {
+          position: relative;
+          a {
+            display: block;
+            width: 234px;
+            height: 68px;
+
+            .img-box {
+              position: absolute;
+              right: 20px;
+              top: 32px;
+              width: 80px;
+              height: 80px;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            .name {
+              margin: -10px 110px 5px 30px;
+              font-size: 14px;
+              font-weight: 400;
+              color: #333;
+              text-align: center;
+            }
+
+            .price {
+              margin: 0 110px 0 30px;
+              font-size: 12px;
+              color: #ff6700;
+              text-align: center;
             }
           }
+        }
 
-          &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        & > .item-half-more {
+          position: relative;
+          a {
+            display: block;
+            width: 234px;
+            height: 45px;
+
+            .iconfont-box {
+              position: absolute;
+              right: 35px;
+              top: 48px;
+              width: 48px;
+              height: 48px;
+              color: #ff6700;
+
+              .iconfont {
+                font-size: 48px;
+                line-height: 48px;
+              }
+            }
+
+            .text-box {
+              margin: 0 110px 0 30px;
+              font-size: 18px;
+              color: #333;
+
+              p {
+                float: left;
+              }
+
+              small {
+                font-size: 12px;
+                color: #757575;
+                float: left;
+              }
+            }
+
+            .descr {
+              display: block;
+              width: 94px;
+              height: 18px;
+              font-size: 12px;
+              color: #757575;
+            }
           }
+        }
+
+        & > div:first-child {
+          margin-bottom: 14px;
+        }
+
+        & > div:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
       }
     }
