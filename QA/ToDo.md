@@ -4,6 +4,6 @@
 > 
 > * ad-aside网格线
 > 
-> * js轮播图
+> * banner通过js轮播图
 >
 > * js实现title-box-list悬停后离开也保持原效果，以及下方内容的切换，以及鼠标样式
