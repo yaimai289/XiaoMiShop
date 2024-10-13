@@ -575,7 +575,7 @@ img {
         border-bottom: 2px solid rgba(0, 0, 0, 0);
         transition: border 0.3s;
 
-        &:hover {
+        &.earphone {
           color: #ff6700;
           border-bottom: 2px solid #ff6700;
         }
@@ -642,6 +642,11 @@ img {
       width: 992px;
       height: 614px;
       float: left;
+      overflow: hidden;
+
+      &.wear {
+        height: 0px;
+      }
 
       .item {
         width: 234px;
@@ -664,6 +669,9 @@ img {
           font-size: 14px;
           font-weight: 400;
           text-align: center;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
           color: #333;
           line-height: 21px;
           margin: 0 auto 2px;
@@ -672,6 +680,10 @@ img {
         .descr {
           width: 214px;
           height: 18px;
+          text-align: center;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
           color: #b0b0b0;
           font-size: 12px;
           line-height: 18px;
