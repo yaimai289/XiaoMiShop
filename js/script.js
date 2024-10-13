@@ -8,7 +8,7 @@ for (let contentBox of contentBoxCollection) {
         const liCollection = titleBox.getElementsByTagName("li");
 
         for (let li of liCollection) {
-            li.addEventListener("mouseover", function() {
+            li.addEventListener("mouseover", () => {
                 const lis = li.parentNode.children;
                 for (let liElse of lis) {
                     liElse.style.color = "#424242";
@@ -30,3 +30,61 @@ for (let contentBox of contentBoxCollection) {
         }
     }
 }
+
+
+let slideIndex = 0;
+const slides = Array.from(document.getElementsByClassName("carousel-slide"));
+const dots = Array.from(document.getElementsByClassName("dot-button"));
+let isCooldown = false;
+
+function showSlide(index) {
+    if (isCooldown) return;
+    if (index >= slides.length) slideIndex = 0;
+    if (index < 0) slideIndex = slides.length - 1;
+
+    slides.forEach(slide => (slide.style.opacity = 0));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[slideIndex].style.opacity = 1;
+    dots[slideIndex].classList.add("active");
+
+    isCooldown = true;
+    setTimeout(() => {
+        isCooldown = false;
+    }, 1500);
+    return;
+}
+
+document.getElementsByClassName("carousel-prev")[0].addEventListener("click", () => {
+    slideIndex--;
+    showSlide(slideIndex);
+});
+
+document.getElementsByClassName("carousel-next")[0].addEventListener("click", () => {
+    slideIndex++;
+    showSlide(slideIndex);
+});
+
+
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        slideIndex = index;
+        showSlide(slideIndex);
+    });
+});
+
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        slideIndex = index;
+        showSlide(slideIndex);
+    });
+});
+
+
+showSlide(slideIndex);
+
+setInterval(() => {
+    slideIndex++;
+    showSlide(slideIndex);
+}, 5000);
+
