@@ -1,3 +1,4 @@
+// 切换banner内内容
 const contentBoxCollection = document.getElementsByClassName("content-box");
 
 for (let contentBox of contentBoxCollection) {
@@ -32,6 +33,7 @@ for (let contentBox of contentBoxCollection) {
 }
 
 
+// 轮播图
 let slideIndex = 0;
 const slides = Array.from(document.getElementsByClassName("carousel-slide"));
 const dots = Array.from(document.getElementsByClassName("dot-button"));
@@ -88,3 +90,26 @@ setInterval(() => {
     showSlide(slideIndex);
 }, 5000);
 
+
+// 侧边工具栏
+const sideTools = document.getElementsByClassName("sidetools")[0];
+const toTopButton = document.getElementsByClassName('to-top')[0];
+
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 200) {
+        sideTools.style.height = "550px";
+        toTopButton.style.height = "90px";
+        toTopButton.style.marginTop = "10px";
+    } else {
+        sideTools.style.height = "450px";
+        toTopButton.style.height = "0px";
+        toTopButton.style.marginTop = "0px";
+    }
+};
+
+toTopButton.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
